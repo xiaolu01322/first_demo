@@ -8,7 +8,7 @@
 
 <script setup>
 import { ref } from "vue";
-import componentB from "./B/ComponentB.vue";
+import componentB from "./ComponentB.vue";
 
 let child = ref(null);
 const parentEmit = (res) => {
