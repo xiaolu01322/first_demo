@@ -10,7 +10,6 @@
 import { ref } from "vue";
 import componentB from "./ComponentB.vue";
 
-let child = ref(null);
 const parentEmit = (res) => {
   console.log(res);
 };
