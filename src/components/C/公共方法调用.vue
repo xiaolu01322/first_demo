@@ -7,7 +7,7 @@
 <script setup>
 import getListJs from '@/js/getList.js'
 import { onMounted } from '@vue/runtime-core'
-const {list,getListFn}   = getListJs(1)
+const {list,getListFn}   = getListJs()
 
 onMounted(()=>{
   getListFn(4)

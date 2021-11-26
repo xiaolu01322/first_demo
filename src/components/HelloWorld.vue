@@ -1,19 +1,25 @@
 <template>
 <div>
   <div>{{useList}}</div>
-  <div>{{list}}</div>
+  <div @click="index++">{{list}}{{index}}</div>
 </div>
 </template>
 
 <script setup>
 import useGetList from '@/js/useGetList.js'
 import getList from '@/js/getList.js'
+import { ref ,watch} from 'vue'
+const index = ref(1)
+const {useList,useGetListFn}   = useGetList()
+const {list,getListFn} = getList()
 
-const {useList,useGetListFn}   = useGetList(1)
-const {list,getListFn} = getList(2)
+useGetListFn(index.value)
+getListFn(index.value)
 
-useGetListFn()
-getListFn()
+watch(index, ()=>{
+  useGetListFn(index.value)
+})
+
 
 
 </script>

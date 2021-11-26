@@ -9,11 +9,11 @@
 import useGetList from '@/js/useGetList.js'
 import getList from '@/js/getList.js'
 
-const {useList,useGetListFn}   = useGetList(1)
-const {list,getListFn} = getList(2)
+const {useList,useGetListFn}   = useGetList()
+const {list,getListFn} = getList()
 
-useGetListFn()
-getListFn()
+useGetListFn(1)
+getListFn(1)
 
 
 </script>
