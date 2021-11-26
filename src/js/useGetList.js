@@ -4,8 +4,8 @@ import { ref } from 'vue'
 export default function useGetList() {
   const { list, getListFn } = getList()
   const useList = ref([])
-  const useGetListFn = async (index) => {
-    await getListFn(index)
+  const useGetListFn = (index) => {
+    getListFn(index)
     useList.value = list.value.concat(['aaaa'])
   }
 
