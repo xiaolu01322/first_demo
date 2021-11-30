@@ -1,17 +1,14 @@
 <template>
-<div @click="change">1_{{msg}}</div>
-
+  <div @click="change">点我点我</div>
 </template>
 
 <script setup>
-import { defineEmits,defineProps } from 'vue';
-const parentEmit =  defineEmits(['parentEmit']); // 使用defineEmits和defineProps不需要导入
-defineProps({
-  msg: String
-})
-const change = () =>{
-  parentEmit('parentEmit',123)
-}
+import { defineEmits } from "vue";
+const emit = defineEmits(["parentEmit", "parentEmitTwo"]);
+const change = () => {
+  emit("parentEmit", 123);
+  emit("parentEmitTwo", 456);
+};
 </script>
 
 <style scoped>
